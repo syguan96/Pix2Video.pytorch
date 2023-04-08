@@ -35,7 +35,7 @@ This method doesn't require `complex attention map copy/modification` or any kin
 <table class="center">
 <tr>
   <td><img src="./assets/Bat man is surfing.gif"></td>      
-  <td><img src="./assets/Iron man is surfing.gif"></td>
+  <td><img src="./assets/Iron Man is surfing.gif"></td>
   <td><img src="./assets/Donald Trump is surfing.gif"></td>
 </tr>
 <tr>
