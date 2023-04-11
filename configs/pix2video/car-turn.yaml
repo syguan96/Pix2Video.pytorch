@@ -1,0 +1,30 @@
+pretrained_model_path: "stabilityai/stable-diffusion-2-depth"
+output_dir: "./outputs/pix2video/car-turn"
+
+train_data:
+  video_path: "data/car-turn.mp4"
+  prompt: "a jeep car is moving on the road"
+  n_sample_frames: 16
+  width: 512
+  height: 512
+  sample_start_idx: 0
+  sample_frame_rate: 3
+
+validation_data:
+  prompts:
+    - "a jeep car is moving on the beach"
+    - "a jeep car is moving on the snow"
+    - "a jeep car is moving on the road, cartoon style"
+    - "a red car is moving on the road"
+  video_length: 16
+  width: 512
+  height: 512
+  num_inference_steps: 50
+  guidance_scale: 12.5
+  use_inv_latent: True
+  num_inv_steps: 50
+
+train_batch_size: 1
+seed: 33
+mixed_precision: fp16
+enable_xformers_memory_efficient_attention: True

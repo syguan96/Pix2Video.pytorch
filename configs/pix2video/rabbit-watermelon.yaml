@@ -1,0 +1,30 @@
+pretrained_model_path: "stabilityai/stable-diffusion-2-depth"
+output_dir: "./outputs/pix2video/rabbit-watermelon"
+train_data:
+  video_path: "data/rabbit-watermelon.mp4"
+  prompt: "a rabbit is eating a watermelon"
+  n_sample_frames: 16
+  width: 512
+  height: 512
+  sample_start_idx: 0
+  sample_frame_rate: 3
+
+validation_data:
+  prompts:
+    - "a rabbit is eating an orange"
+    - "a rabbit is eating a pizza"
+    - "a puppy is eating an orange"
+    - "a black rabbit is eating a watermelon"
+  video_length: 16
+  width: 512
+  height: 512
+  num_inference_steps: 50
+  guidance_scale: 12.5
+  use_inv_latent: True
+  num_inv_steps: 50
+
+train_batch_size: 1
+
+seed: 33
+mixed_precision: fp16
+enable_xformers_memory_efficient_attention: True

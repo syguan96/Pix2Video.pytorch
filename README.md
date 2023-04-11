@@ -3,9 +3,32 @@ Implementation of the paper "[Pix2Video: Video Editing using Image Diffusion](ht
 
 This method doesn't require `complex attention map copy/modification` or any kinds of `fine-tuning` compared to fate-zero/Tune-A-Video. We generate video with only pretrained text2img stable diffusion model. 
 
-> The repo is still under reconstruction and will be released soon.
+## Setup
+
+### Requirements
+
+```
+pip install -r requirements.txt
+```
+
+Installing [xformers](https://github.com/facebookresearch/xformers) is highly recommended for more efficiency and speed on GPUs. To enable xformers, set `enable_xformers_memory_efficient_attention=True` (default).
+
+### Weights
+
+**[Stable Diffusion]** [Stable Diffusion](https://arxiv.org/abs/2112.10752) is a latent text-to-image diffusion model capable of generating photo-realistic images given any text input. The pre-trained Stable Diffusion models can be downloaded from Hugging Face ([stable-diffusion-2 · Hugging Face](https://huggingface.co/stabilityai/stable-diffusion-2-depth)).
+
+## Usage
+
+### Inference
+
+To fine-tune the text-to-image diffusion models for text-to-video generation, run this command:
+
+```shell
+accelerate launch train_pix2video.py --config="configs/pix2video/man-skiing.yaml"
+```
 
 ## Results
+
 <table class="center">
 <tr>
   <td><img src="./assets/a jeep car is moving on the beach.gif"></td>      
@@ -58,6 +81,7 @@ This method doesn't require `complex attention map copy/modification` or any kin
 </tr>
 </table>
 
+
 ## Citations
 
 If you make use of the work, please cite the paper.
@@ -69,3 +93,13 @@ If you make use of the work, please cite the paper.
   year={2023}
 }
 }
+```
+
+## Shoutouts
+
+- This code builds on [diffusers](https://github.com/huggingface/diffusers) and [Tune-A-Video](https://github.com/showlab/Tune-A-Video). Thanks for open-sourcing!
+
+## Contact
+
+If you have any questions or better implementation ways, feel free to open an issue or contact me through e-mail (wangfuyun@smail.nju.edu.cn)
+

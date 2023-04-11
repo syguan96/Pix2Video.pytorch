@@ -1,0 +1,31 @@
+pretrained_model_path: "stabilityai/stable-diffusion-2-depth"
+output_dir: "./outputs/pix2video/man-skiing"
+
+train_data:
+  video_path: "data/man-skiing.mp4"
+  prompt: "a man is skiing"
+  n_sample_frames: 16
+  width: 512
+  height: 512
+  sample_start_idx: 0
+  sample_frame_rate: 3
+
+validation_data:
+  prompts:
+    - "Iron Man is skiing on the snow"
+    - "A woman is skiing on the snow"
+    - "A man wearing red is sking on the snow"
+    - "A man is surfing on the sea"
+  video_length: 16
+  width: 512
+  height: 512
+  num_inference_steps: 50
+  guidance_scale: 12.5
+  use_inv_latent: True
+  num_inv_steps: 50
+
+train_batch_size: 1
+
+seed: 33
+mixed_precision: fp16
+enable_xformers_memory_efficient_attention: True
