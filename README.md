@@ -58,7 +58,7 @@ accelerate launch train_pix2video.py --config="configs/pix2video/man-skiing.yaml
 <table class="center">
 <tr>
   <td><img src="./assets/Bat man is surfing.gif"></td>      
-  <td><img src="./assets/Iron man is surfing.gif"></td>
+  <td><img src="./assets/Iron Man is surfing.gif"></td>
   <td><img src="./assets/Donald Trump is surfing.gif"></td>
 </tr>
 <tr>
@@ -102,4 +102,3 @@ If you make use of the work, please cite the paper.
 ## Contact
 
 If you have any questions or better implementation ways, feel free to open an issue or contact me through e-mail (wangfuyun@smail.nju.edu.cn)
-
