@@ -149,7 +149,7 @@ def main(
             latents = vae.encode(pixel_values).latent_dist.sample()
             latents = rearrange(latents, "(b f) c h w -> b c f h w", f=video_length)
             latents = latents * 0.18215
-            pixel_values = (pixel_values+1)*127.5
+            pixel_values = (pixel_values+1)/2
 
             samples = []
             generator = torch.Generator(device=accelerator.device)
